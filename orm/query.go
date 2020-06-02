@@ -1033,6 +1033,24 @@ func (q *Query) Insert(values ...interface{}) (Result, error) {
 	return res, nil
 }
 
+func (q *Query) InsertCascade(values ...interface{}) (Result, error) {
+	if q.stickyErr != nil {
+		return nil, q.stickyErr
+	}
+
+	model, err := q.newModel(values...)
+	if err != nil {
+		return nil, err
+	}
+
+	c := q.ctx
+
+	query := newInsertCascadeQuery(q)
+	res, err := q.returningQuery(c, model, query)
+
+	return res, nil
+}
+
 // SelectOrInsert selects the model inserting one if it does not exist.
 // It returns true when model was inserted.
 func (q *Query) SelectOrInsert(values ...interface{}) (inserted bool, _ error) {

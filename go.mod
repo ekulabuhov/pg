@@ -6,10 +6,9 @@ require (
 	github.com/go-pg/pg/v9 v9.1.6 // indirect
 	github.com/go-pg/urlstruct v0.4.0
 	github.com/go-pg/zerochecker v0.1.1
-	github.com/golang/protobuf v1.4.2 // indirect
 	github.com/jinzhu/inflection v1.0.0
-	github.com/onsi/ginkgo v1.10.1
-	github.com/onsi/gomega v1.7.0
+	github.com/onsi/ginkgo v1.12.3
+	github.com/onsi/gomega v1.10.1
 	github.com/segmentio/encoding v0.1.12
 	github.com/tmthrgd/go-hex v0.0.0-20190904060850-447a3041c3bc
 	github.com/vmihailenco/bufpool v0.1.11

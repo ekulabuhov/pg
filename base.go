@@ -532,6 +532,11 @@ func (db *baseDB) Insert(model ...interface{}) error {
 	return orm.Insert(db.db, model...)
 }
 
+// Insert inserts the model updating primary keys if they are empty.
+func (db *baseDB) InsertCascade(model ...interface{}) error {
+	return orm.InsertCascade(db.db, model...)
+}
+
 // Update updates the model by primary key.
 func (db *baseDB) Update(model interface{}) error {
 	return orm.Update(db.db, model)
